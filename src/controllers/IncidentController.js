@@ -52,7 +52,7 @@ module.exports = {
       return res.status(401).json({ error: 'oepration not prohited' } )
     } 
 
-    const [resId] = await connection('incidents').where('id', id).delete()
+    const resId = await connection('incidents').where('id', id).delete()
 
     return res.status(200).json({ id: resId })
   }
